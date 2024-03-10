@@ -1,5 +1,3 @@
-# Gestor-de-inventario 
- 
 ---
 
 # Sistema Gestion de Inventario
