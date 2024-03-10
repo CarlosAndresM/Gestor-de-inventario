@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="Productos.css"> 
+    <script src="chart.js"></script>
+
+
+</head>
+
+<body>
+    <div class="barra-lateral">
+        <div class="nombre-pagina">
+            <img class="icon" src="./img/home.svg" alt="" srcset="">
+            <a href="index.html">Nombre del Negocio</a>
+        </div>
+        <ul class="navegacion">
+            <li><a href="Productos.html">
+
+                    <img class="icon" src="./img/cart.svg" alt="" srcset="">
+
+                    <span>Productos</span>
+
+                </a></li>
+            <li><a href="#">
+                    <img class="icon" src="./img/stats-chart.svg" alt="" srcset="">
+                    <span>Estadísticas</span>
+                </a></li>
+        </ul>
+     
+    </div>
+    <main>
+        <div class="contentInv">
+
+            <h1>Utilidad X Meses</h1>
+
+            <div class="diagrama">
+                <canvas id="grafico-utilidad"></canvas>
+            </div>
+
+            <div class="cartas">
+
+
+            </div>
+
+            <div class="cartas-inventario">
+                <form id="datos_mensuales">
+                    <div class="form-row">
+                        <label for="Mes">Mes</label>
+                        <input type="text" name="Mes" id="Mes" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="Cartera">Cartera</label>
+                        <input type="number" name="Cartera" id="Cartera" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="Por_recoger">Por recoger</label>
+                        <input type="number" name="Por_recoger" id="Por_recoger" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="Por_pagar">Por pagar</label>
+                        <input type="number" name="Por_pagar" id="Por_pagar" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="Efectivo">Efectivo</label>
+                        <input type="number" name="Efectivo" id="Efectivo" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="utilidad_anterior">Utilidad anterior</label>
+                        <input type="number" name="utilidad_anterior" id="utilidad_anterior" required>
+                    </div>
+
+                    <button id="boton-registrar" type="submit">Registra Inventario</button>
+                </form>
+            </div>
+
+
+    </main>
+
+
+<script src="inventario.js"></script>
+
+</body>
+
+</html> 

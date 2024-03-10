@@ -1,0 +1,25 @@
+{
+  "name": "gama-inv",
+  "version": "1.0.0",
+  "description": "Sistema para gestionar el inventario y agilizar la entrega del mismo",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . GestorInventario --platform=linux --arch=x64 --electron-version=15.2.0 --overwrite",
+    "package:windows": "electron-packager . GestorInventario --platform=win32 --arch=ia32,x64 --electron-version=15.2.0 --overwrite"
+
+  },
+  "keywords": [],
+  "author": {
+    "name": "Carlos Muñoz",
+    "email": "carlosandresmunoza3@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.2.0",
+    "electron-packager": "^17.1.2",
+    "electron-reload": "^2.0.0-alpha.1",
+    "promise-mysql": "^5.2.0",
+    "xlsx-populate": "^1.19.0"
+  }
+}

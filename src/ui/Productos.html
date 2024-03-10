@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de productos</title>
+    <link rel="stylesheet" href="Productos.css">
+    <!-- Importa los iconos de Ionic -->
+
+    <script type="module" src="https://unpkg.com/ionicons@6.0.1/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@6.0.1/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body>
+    <div class="barra-lateral">
+        <div class="nombre-pagina">
+            <img class="icon" src="./img/home.svg" alt="" srcset="">
+            <a href="index.html">Nombre del Negocio</a>    
+        </div>
+        <ul class="navegacion">
+
+            <li><a href="inventario.html">
+                    <img class="icon" src="./img/list.svg" alt="" srcset="">
+                    <span>inventario</span>
+                </a></li>
+            </a></li>
+            <li><a href="#">
+                <img class="icon" src="./img/stats-chart.svg" alt="" srcset="">
+                <span>Estadísticas</span>
+            </a></li>
+        </ul>
+    
+
+    </div>
+    <main>
+        <div class="content">
+            <h1>Productos Registrados</h1>
+            <div class="buscador">
+                <input type="text" id="buscadorP" placeholder="Buscar productos">
+                <button>
+                    <ion-icon id="buscador" name="search-outline"></ion-icon>
+                </button>
+            </div>
+            <ul class="lista-productos">
+                <!-- Aquí se mostrará la lista de productos -->
+            </ul>
+            <div class="registro-productos">
+                <h2>Registrar Nuevo Producto</h2>
+                <form id="registro-form">
+                    <label for="nombre">Nombre del Producto:</label><br>
+                    <input type="text" id="nombre" name="nombre"><br><br>
+
+                    <label for="tipo">Tipo de Unidad:</label><br>
+                    <select id="tipo" name="tipo">
+                        <option value="libra">Libra</option>
+                        <option value="litro">Litro</option>
+                        <option value="unidad">Unidad</option>
+                    </select><br><br>
+
+                    <label for="precio">Precio:</label><br>
+                    <input type="text" id="precio" name="precio"><br><br>
+
+                    <button type="submit">Registrar Producto</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>r
+</body>
+
+</html>

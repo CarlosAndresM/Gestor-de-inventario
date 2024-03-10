@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de cantidades</title>
+    <link rel="stylesheet" href="Productos.css">
+    <link rel="stylesheet" href="generacioInventario.css">
+    <!-- Importa los iconos de Ionic -->
+    <script src="chart.js"></script>
+
+</head>
+
+<body>
+    <div class="contenido-inventario">
+        <h1 id="titulo-mes">Inventario</h1>
+
+        <div class="main">
+            <div class="content">
+                <div class="buscador">
+                    <input type="text" id="buscadorP" placeholder="Buscar productos">
+                    <button>
+                        <ion-icon id="buscador" name="search-outline"></ion-icon>
+                    </button>
+
+                </div>
+
+
+                <!-- Aquí debería estar la tabla -->
+                <ul class="lista-productos">
+                    <!-- Aquí se mostrará la lista de productos -->
+
+
+                </ul>
+                <div class="registro-producto">
+                    <h2>Registro de cantidades</h2>
+
+                    <br>
+                    <form id="registro-form">
+                        <!-- Mostrar el nombre del producto -->
+                        <p id="nombreP"></p>
+
+                        <!-- Mostrar el precio del producto -->
+                        <p id="precioP"></p>
+
+                        <!-- Mostrar la cantidad actual y permitir la edición -->
+                        <label for="cantidad-actual">Cantidad actual</label><br>
+                        <input type="number" id="cantidad-actual" name="cantidad-actual" min="0" readonly><br><br>
+
+                        <!-- Permitir al usuario editar la cantidad actual -->
+
+
+                        <label for="editar-cantidad">Editar cantidad actual</label><br>
+                        <input type="number" id="editar-cantidad" name="editar-cantidad" min="0"><br><br>
+
+                        <!-- Solicitar al usuario la cantidad adicional a registrar -->
+                        <label for="cantidad-registrar">Agregar unidades</label><br>
+                        <input type="number" id="cantidad-registrar" name="cantidad-registrar"><br><br>
+
+                        <!-- Mostrar el total actual del producto -->
+                        <p id="total-producto">Total Actual: </p><br>
+
+                        <!-- Botón para enviar el formulario -->
+                        <button type="submit">Registrar Cantidad</button>
+                    </form>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="botones">
+            <div class="buttons">
+                <button id="terminar-inventario" class="btn"><span></span>
+                    <p data-start="good luck!" data-text="Terminar Inventaio" data-title="Terminar"></p>
+                </button>
+                <button class="btn" id="guardar-inventario"><span></span>
+                    <p data-start="good luck!" data-text="Continuar despues" data-title="Guardar"></p>
+                </button>
+
+                <button id="exportButton">Exportar a Excel</button>
+
+
+            </div>
+        </div>
+
+
+        <div id="wifi-loader">
+            <svg viewBox="0 0 86 86" class="circle-outer">
+                <circle r="40" cy="43" cx="43" class="back"></circle>
+                <circle r="40" cy="43" cx="43" class="front"></circle>
+                <circle r="40" cy="43" cx="43" class="new"></circle>
+            </svg>
+            <svg viewBox="0 0 60 60" class="circle-middle">
+                <circle r="27" cy="30" cx="30" class="back"></circle>
+                <circle r="27" cy="30" cx="30" class="front"></circle>
+            </svg>
+            <svg viewBox="0 0 34 34" class="circle-inner">
+                <circle r="14" cy="17" cx="17" class="back"></circle>
+                <circle r="14" cy="17" cx="17" class="front"></circle>
+            </svg>
+            <div data-text="Generando inventario" class="text"></div>
+        </div>
+    </div>
+ 
+    <script src="generacionInventario.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Gama</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div class="barra-lateral">
+        <div class="nombre-pagina">
+            <img class="icon" src="./img/home.svg" alt="" srcset="">
+            <a href="#">Nombre del Negocio</a>
+        </div>
+        <ul class="navegacion">
+            <li><a href="Productos.html">
+                    <img class="icon" src="./img/cart.svg" alt="" srcset="">
+                    <span>Productos</span>
+                </a></li>
+            <li><a href="inventario.html">
+                    <img class="icon" src="./img/list.svg" alt="" srcset="">
+                    <span>inventario</span>
+                </a></li>
+            <li><a href="#">
+                    <img class="icon" src="./img/stats-chart.svg" alt="" srcset="">
+                    <span>Estadísticas</span>
+                </a></li>
+        </ul>
+     
+    </div>
+    <main>
+        <div class="content">
+            <div class="login">
+                <form id="formV" class="form">
+                    <div class="flex-column">
+                        <label id="NombreUsuario">Usuario actual:</label>
+                    </div>
+                    <div class="inputForm">
+                        <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+                           
+                        </svg>
+                        <input id="usuario" type="text" class="input" placeholder="Ingresa usuario">
+                    </div>
+                    <div class="flex-column">
+                        <label>Contraseña </label>
+                    </div>
+                    <div class="inputForm">
+                        <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                           
+                        </svg>
+                        <input id="contraseña" type="password" class="input" placeholder="Ingresa contraseña">
+                        <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                           
+                        </svg>
+                    </div>
+                    <div class="flex-row">
+                        <button class="button-submit">Ingresar</button>
+                        <button type="button" id="cerrarUsuario" class="button-cerrar">Cerrar usuario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const main = require('../main');  
+        
+      
+
+        const validarForm = document.getElementById('formV');
+        const user = document.getElementById('usuario');
+        const password = document.getElementById('contraseña');
+
+        const btnCerrarUsuario = document.getElementById('cerrarUsuario');
+        btnCerrarUsuario.addEventListener('click', function () {
+            main.cerrarSeccion(); // Llamar a la función cerrarSeccion cuando se hace clic en el botón 
+            actualizarUsuarioActual(' '); 
+            
+            console.log('Seccion cerrada')
+        });
+
+        // En el evento 'validarCredenciales', enviar credenciales al proceso principal para validar
+        validarForm.addEventListener('submit', async (e) => {
+            e.preventDefault();  
+              const usuario = user.value;  
+                 const contraseña = password.value;  
+            let usuarioActual = await main.validarCredenciales(usuario, contraseña)
+
+            if (usuarioActual === null) {
+                usuarioActual = localStorage.getItem('usuarioActual')
+                alert('Usuario o contraseña incorrecta. No se realizaron cambios.');
+            } else {
+
+                actualizarUsuarioActual(usuarioActual)
+
+                validarForm.reset()
+
+            }
+
+        });
+
+
+       function actualizarUsuarioActual(user) {
+
+            localStorage.setItem('usuarioActual', user)
+
+            document.getElementById('NombreUsuario').innerText = `Usuario actual: ${user} `;
+
+        }
+
+        const UsuarioActual = localStorage.getItem('usuarioActual')
+        actualizarUsuarioActual(UsuarioActual);
+    </script>
+
+
+
+
+</body>
+
+</html>

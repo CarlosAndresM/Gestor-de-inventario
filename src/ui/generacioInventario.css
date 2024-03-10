@@ -1,0 +1,435 @@
+#wifi-loader {
+    --background: #62abff;
+    --front-color: #000;
+    --back-color: #c3c8de;
+    --text-color: #414856;
+    width: 100vw; /* Ancho igual al ancho de la ventana */
+    height: 100vh; /* Alto igual al alto de la ventana */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    position: fixed; /* Posicionamiento fijo para mantenerlo en la pantalla */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+}
+
+
+
+#wifi-loader svg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wifi-loader svg circle {
+  position: absolute;
+  fill: none;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(-100deg);
+  transform-origin: center;
+}
+
+#wifi-loader svg circle.back {
+  stroke: var(--back-color);
+}
+
+#wifi-loader svg circle.front {
+  stroke: var(--front-color);
+}
+
+#wifi-loader svg.circle-outer {
+  height: 86px;
+  width: 86px;
+}
+
+#wifi-loader svg.circle-outer circle {
+  stroke-dasharray: 62.75 188.25;
+}
+
+#wifi-loader svg.circle-outer circle.back {
+  animation: circle-outer135 1.8s ease infinite 0.3s;
+}
+
+#wifi-loader svg.circle-outer circle.front {
+  animation: circle-outer135 1.8s ease infinite 0.15s;
+}
+
+#wifi-loader svg.circle-middle {
+  height: 60px;
+  width: 60px;
+}
+
+#wifi-loader svg.circle-middle circle {
+  stroke-dasharray: 42.5 127.5;
+}
+
+#wifi-loader svg.circle-middle circle.back {
+  animation: circle-middle6123 1.8s ease infinite 0.25s;
+}
+
+#wifi-loader svg.circle-middle circle.front {
+  animation: circle-middle6123 1.8s ease infinite 0.1s;
+}
+
+#wifi-loader svg.circle-inner {
+  height: 34px;
+  width: 34px;
+}
+
+#wifi-loader svg.circle-inner circle {
+  stroke-dasharray: 22 66;
+}
+
+#wifi-loader svg.circle-inner circle.back {
+  animation: circle-inner162 1.8s ease infinite 0.2s;
+}
+
+#wifi-loader svg.circle-inner circle.front {
+  animation: circle-inner162 1.8s ease infinite 0.05s;
+} 
+
+#wifi-loader .text {
+  position: relative;
+  bottom: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-size: 24px;
+  padding-top: 70px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  z-index: 1;
+}
+
+#wifi-loader .text::before,
+#wifi-loader .text::after {
+  content: attr(data-text);
+}
+
+#wifi-loader .text::before {
+  color: var(--text-color);
+}
+
+#wifi-loader .text::after {
+  color: var(--front-color);
+  animation: text-animation76 3.6s ease infinite;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes circle-outer135 {
+  0% {
+    stroke-dashoffset: 25;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 301;
+  }
+
+  80% {
+    stroke-dashoffset: 276;
+  }
+
+  100% {
+    stroke-dashoffset: 276;
+  }
+}
+
+@keyframes circle-middle6123 {
+  0% {
+    stroke-dashoffset: 17;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 204;
+  }
+
+  80% {
+    stroke-dashoffset: 187;
+  }
+
+  100% {
+    stroke-dashoffset: 187;
+  }
+}
+
+@keyframes circle-inner162 {
+  0% {
+    stroke-dashoffset: 9;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 106;
+  }
+
+  80% {
+    stroke-dashoffset: 97;
+  }
+
+  100% {
+    stroke-dashoffset: 97;
+  }
+}
+
+@keyframes text-animation76 {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50% {
+    clip-path: inset(0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+ 
+
+.registro-producto { 
+
+    background-color: var(--color-secondary);
+    grid-row: 2 / span 2; 
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 40px;
+    top: 60px;
+}
+
+
+.lista-productos { 
+    height: 400px;
+    list-style: none;
+    padding: 0;
+    margin-top: 18px;
+}
+
+.lista-producto li {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Centra el contenido verticalmente */
+}
+
+
+.botones {
+  display: flex;
+  justify-content: center; 
+}
+
+
+.buttons {
+  display: flex;
+}
+
+
+
+.buttons button {
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  margin: 20px;
+  color: #568fa6;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+
+.buttons button:before, .buttons button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #44d8a4;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:after {
+  left: 0;
+  bottom: 0;
+}
+
+.buttons button span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.buttons button span:before, .buttons button span:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: #44d8a4;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:after {
+  left: 0;
+  bottom: 0;
+}
+
+.buttons button p {
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons button p:before, .buttons button p:after {
+  position: absolute;
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  z-index: 1;
+  left: 0;
+}
+
+.buttons button p:before {
+  content: attr(data-title);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttons button p:after {
+  content: attr(data-text);
+  top: 150%;
+  color: #44d8a4;
+}
+
+.buttons button:hover:before, .buttons button:hover:after {
+  width: 100%;
+}
+
+.buttons button:hover span {
+  z-index: 1;
+}
+
+.buttons button:hover span:before, .buttons button:hover span:after {
+  height: 100%;
+}
+
+.buttons button:hover p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.buttons button:hover p:after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttons button.start {
+  background-color: #44d8a4;
+  box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.buttons button.start p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.buttons button.start p:after {
+  color: white;
+  transition: all 0s ease;
+  content: attr(data-start);
+  top: 50%;
+  transform: translateY(-50%);
+  animation: start 0.3s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes start {
+  from {
+    top: -50%;
+  }
+}
+
+.buttons button.start:hover:before, .buttons button.start:hover:after {
+  display: none;
+}
+
+.buttons button.start:hover span {
+  display: none;
+}
+
+.buttons button:active {
+  outline: none;
+  border: none;
+}
+
+.buttons button:focus {
+  outline: 0;
+}
+
+
+/* Estilos para el input con el ID "cantidad-actual" */
+#cantidad-actual[type="number"] {
+  border: none; /* Elimina el borde */
+  background-color: transparent; /* Elimina el fondo */
+  padding: 0; /* Elimina el espacio interno */
+  margin: 0; /* Elimina el margen */
+  font-size: 18px;
+  outline: none; /* Elimina el contorno de enfoque */
+}

@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+
+:root {
+    --color-barra-lateral: rgb(255, 255, 255);
+    --color-texto: rgb(0, 0, 0);
+    --color-texto-menu: rgb(134, 136, 144);
+    --color-menu-hover: rgb(238, 238, 238);
+    --color-menu-hover-texto: rgb(0, 0, 0);
+    --color-boton: rgb(0, 0, 0);
+    --color-boton-texto: rgb(255, 255, 255);
+    --color-linea: rgb(180, 180, 180);
+    --color-switch-base: rgb(201, 202, 206);
+    --color-switch-circulo: rgb(241, 241, 241);
+    --color-scroll: rgb(192, 192, 192);
+    --color-scroll-hover: rgb(134, 134, 134);
+}
+
+.dark-mode {
+    --color-barra-lateral: rgb(44, 45, 49);
+    --color-texto: rgb(255, 255, 255);
+    --color-texto-menu: rgb(110, 110, 117);
+    --color-menu-hover: rgb(0, 0, 0);
+    --color-menu-hover-texto: rgb(238, 238, 238);
+    --color-boton: rgb(255, 255, 255);
+    --color-boton-texto: rgb(0, 0, 0);
+    --color-linea: rgb(90, 90, 90);
+    --color-switch-base: rgb(39, 205, 64);
+    --color-switch-circulo: rgb(255, 255, 255);
+    --color-scroll: rgb(68, 69, 74);
+    --color-scroll-hover: rgb(85, 85, 85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+}
+
+/*-----------------Menu*/
+.menu {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+
+/*----------------Barra Lateral*/
+.barra-lateral {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 280px;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--color-barra-lateral);
+    transition: width 0.5s ease, background-color 0.3s ease, left 0.5s ease;
+    z-index: 50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.554);
+    /* Agrega sombra al aside */
+
+}
+
+.mini-barra-lateral {
+    width: 80px;
+}
+
+.barra-lateral span {
+    width: 100px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.barra-lateral span.oculto {
+    opacity: 0;
+    width: 0;
+}
+
+/*------------> Nombre de la página */
+.barra-lateral .nombre-pagina {
+    width: 100%;
+    height: 45px;
+    color: var(--color-texto);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.icon {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    margin: 0;
+
+
+}
+
+.moon {
+    height: 25px;
+    width: 25px;
+}
+
+
+.barra-lateral .nombre-pagina a {
+    margin-left: 5px;
+    font-size: 20px;
+    cursor: default; 
+    text-decoration: none;
+    color: #252727; 
+    cursor: pointer;
+}
+
+/*------------> Botón*/
+.barra-lateral .boton {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+}
+
+
+
+
+
+
+/*--------------> Menu Navegación*/
+.barra-lateral .navegacion {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.barra-lateral .navegacion::-webkit-scrollbar {
+    width: 5px;
+}
+
+.barra-lateral .navegacion::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll);
+    border-radius: 5px;
+}
+
+.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scroll-hover);
+}
+
+.barra-lateral .navegacion li {
+    list-style: none;
+    height: 40px;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.barra-lateral .navegacion a {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--color-texto-menu);
+
+    padding: 8px;
+}
+
+
+
+
+.barra-lateral .navegacion span {
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 12px;
+    cursor: pointer;
+
+}
+
+
+.barra-lateral .navegacion a:hover {
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+
+
+
+
+/*-----------------> Linea*/
+.barra-lateral .linea {
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
+    background-color: var(--color-linea);
+}
+
+/*----------------> Modo Oscuro*/
+.barra-lateral .modo-oscuro {
+    width: 100%;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra-lateral .modo-oscuro .info {
+    width: 150px;
+    height: 45px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-menu);
+}
+
+.barra-lateral .modo-oscuro ion-icon {
+    width: 50px;
+    font-size: 20px;
+}
+
+/*--->switch*/
+.barra-lateral .modo-oscuro .switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.barra-lateral .modo-oscuro .base {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    background-color: var(--color-switch-base);
+    border-radius: 50px;
+}
+
+.barra-lateral .modo-oscuro .circulo {
+    position: absolute;
+    width: 18px;
+    height: 90%;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50%;
+    left: 2px;
+    transition: left 0.5s ease;
+}
+
+.barra-lateral .modo-oscuro .circulo.prendido {
+    left: 15px;
+}
+
+/*---------------> Usuario*/
+.barra-lateral .usuario {
+    width: 100%;
+    display: flex;
+}
+
+.barra-lateral .usuario img {
+    width: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+}
+
+.barra-lateral .usuario .info-usuario {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-texto);
+    overflow: hidden;
+}
+
+.barra-lateral .usuario .nombre-email {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.barra-lateral .usuario .nombre {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.barra-lateral .usuario .email {
+    font-size: 13px;
+}
+
+.barra-lateral .usuario ion-icon {
+    font-size: 20px;
+}
+
+/*-------------main*/
+
+#inbox {
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+
+/* Estilos para el elemento main */
+main {
+    margin-left: 250px;
+    padding: 20px;
+    height: 100%;
+    transition: margin-left 0.5s ease;
+    background-color: #ffffff; 
+    color: #000000; 
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+h1 {
+    display: inline;
+    font-size: 2.5rem;
+    /* Tamaño del texto del título */
+    margin-bottom: 20px;
+    /* Espacio inferior entre el título y el párrafo */
+}
+
+p {
+    font-size: 1.1rem;
+    /* Tamaño del texto del párrafo */
+    margin-bottom: 20px;
+    /* Espacio inferior entre párrafos */
+}
+
+img {
+    max-width: 100%;
+    /* Asegura que la imagen no supere su contenedor */
+    height: auto;
+    /* Permite que la altura se ajuste automáticamente */
+    display: block;
+    /* Elimina el espacio adicional debajo de la imagen */
+    margin: 0 auto;
+    /* Centra la imagen horizontalmente */
+}
+
+
+/* Estilos para el modo oscuro del elemento main */
+.dark-mode main {
+    background-color: #333333;
+    /* Color de fondo en modo oscuro */
+    color: #ffffff;
+    /* Color de texto en modo oscuro */
+}
+
+/*------------------> Responsive*/
+@media (max-height: 660px) {
+    .barra-lateral .nombre-pagina {
+        margin-bottom: 5px;
+    }
+
+    .barra-lateral .modo-oscuro {
+        margin-bottom: 3px;
+    }
+}
+
+@media (max-width: 600px) {
+    .barra-lateral {
+        position: fixed;
+        left: -250px;
+    }
+
+    .max-barra-lateral {
+        left: 0;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu ion-icon:nth-child(2) {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    main.min-main {
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    width: 450px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+
+.dark-mode .form {
+    background-color: #333333;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(169, 168, 168, 0.1);
+
+}
+
+
+.form button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #151717;
+    color: white;
+    cursor: pointer;
+    transition: background-color 222ms;
+}
+
+.form button:hover {
+    background-color: #349a9a;
+}
+
+.flex-column>label {
+    color: #151717;
+    font-weight: 600;
+}
+
+.inputForm {
+    border: 1.5px solid #ecedec;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.input {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 85%;
+    height: 100%;
+}
+
+.dark-mode .input {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.inputForm:focus-within {
+    border: 1.5px solid #2d79f3;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.flex-row>div>label {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+}
+
+.button-submit {
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+
+.button-cerrar {
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dark-mode .button-cerrar {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+.button-cerrar:hover {
+    background-color: #252727;
+}
+
+
+.button-submit:hover {
+    background-color: #252727;
+}
+
+.p {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    border: 1px solid #2d79f3;
+    ;
+}
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 350px;
+}
+
+.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .button-submit {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.dark-mode .button-submit:hover {
+    background-color: #151717;
+    color: #ffffff;
+}
+
+
+.dark-mode .inputForm:focus-within {
+    border: 1.5px solid #ffffff;
+
+}
+
+/* Aplicar modo oscuro a los textos */
+.dark-mode .flex-column>label {
+    color: #ffffff;
+}
+
+.dark-mode .flex-row>div>label {
+    color: #ffffff;
+}
+
+
+.dark-mode .p {
+    color: #ffffff;
+}
+
+.dark-mode .btn:hover {
+    border: 1px solid #ffffff;
+}

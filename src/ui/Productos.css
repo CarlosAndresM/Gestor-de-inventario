@@ -1,0 +1,863 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+
+:root {
+    --color-barra-lateral: rgb(255, 255, 255);
+    --color-texto: rgb(0, 0, 0);
+    --color-texto-menu: rgb(134, 136, 144);
+    --color-menu-hover: rgb(238, 238, 238);
+    --color-menu-hover-texto: rgb(0, 0, 0);
+    --color-boton: rgb(0, 0, 0);
+    --color-boton-texto: rgb(255, 255, 255);
+    --color-linea: rgb(180, 180, 180);
+    --color-switch-base: rgb(201, 202, 206);
+    --color-switch-circulo: rgb(241, 241, 241);
+    --color-scroll: rgb(192, 192, 192);
+    --color-scroll-hover: rgb(134, 134, 134);
+}
+
+.dark-mode {
+    --color-barra-lateral: rgb(44, 45, 49);
+    --color-texto: rgb(255, 255, 255);
+    --color-texto-menu: rgb(110, 110, 117);
+    --color-menu-hover: rgb(0, 0, 0);
+    --color-menu-hover-texto: rgb(238, 238, 238);
+    --color-boton: rgb(255, 255, 255);
+    --color-boton-texto: rgb(0, 0, 0);
+    --color-linea: rgb(90, 90, 90);
+    --color-switch-base: rgb(39, 205, 64);
+    --color-switch-circulo: rgb(255, 255, 255);
+    --color-scroll: rgb(68, 69, 74);
+    --color-scroll-hover: rgb(85, 85, 85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%; 
+    
+}
+
+/*-----------------Menu*/
+.menu {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+}
+ 
+/*----------------Barra Lateral*/
+.barra-lateral {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 280px;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--color-barra-lateral);
+    transition: width 0.5s ease, background-color 0.3s ease, left 0.5s ease;
+    z-index: 50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.554); /* Agrega sombra al aside */
+
+}
+
+.mini-barra-lateral {
+    width: 80px;
+}
+
+.barra-lateral span {
+    width: 100px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.barra-lateral span.oculto {
+    opacity: 0;
+    width: 0; 
+}
+
+/*------------> Nombre de la página */
+.barra-lateral .nombre-pagina {
+    width: 100%;
+    height: 45px;
+    color: var(--color-texto);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center; 
+}
+
+
+
+.icon{
+    height: 25px;
+    width: 25px; 
+    cursor: pointer;
+    margin: 0; 
+    
+
+}
+.moon{
+    height: 25px;
+    width: 25px;
+}
+ 
+
+.barra-lateral .nombre-pagina a {
+    margin-left: 5px;
+    font-size: 20px;
+    cursor: default; 
+    text-decoration: none;
+    color: #252727; 
+    cursor: pointer;
+}
+
+
+/*------------> Botón*/
+.barra-lateral .boton {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+}
+
+
+
+
+
+
+/*--------------> Menu Navegación*/
+.barra-lateral .navegacion {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+ 
+}
+
+.barra-lateral .navegacion::-webkit-scrollbar {
+    width: 5px;
+}
+
+.barra-lateral .navegacion::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll);
+    border-radius: 5px;
+}
+
+.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scroll-hover);
+}
+
+.barra-lateral .navegacion li {
+    list-style: none;
+    height: 40px;
+    display: flex; 
+    margin-bottom: 5px; 
+}
+
+.barra-lateral .navegacion a {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--color-texto-menu);
+    padding: 8px;
+}
+
+
+
+
+.barra-lateral .navegacion span {
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 12px;
+    cursor: pointer;  
+
+}
+
+
+.barra-lateral .navegacion a:hover {
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+
+ 
+
+
+/*-----------------> Linea*/
+.barra-lateral .linea {
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
+    background-color: var(--color-linea);
+}
+
+/*----------------> Modo Oscuro*/
+.barra-lateral .modo-oscuro {
+    width: 100%;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra-lateral .modo-oscuro .info {
+    width: 150px;
+    height: 45px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: var(--color-texto-menu);
+}
+
+.barra-lateral .modo-oscuro ion-icon {
+    width: 50px;
+    font-size: 20px;
+}
+
+/*--->switch*/
+.barra-lateral .modo-oscuro .switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.barra-lateral .modo-oscuro .base {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    background-color: var(--color-switch-base);
+    border-radius: 50px;
+}
+
+.barra-lateral .modo-oscuro .circulo {
+    position: absolute;
+    width: 18px;
+    height: 90%;
+    background-color: var(--color-switch-circulo);
+    border-radius: 50%;
+    left: 2px;
+    transition: left 0.5s ease;
+}
+
+.barra-lateral .modo-oscuro .circulo.prendido {
+    left: 15px;
+}
+
+/*---------------> Usuario*/
+.barra-lateral .usuario {
+    width: 100%;
+    display: flex;
+}
+
+.barra-lateral .usuario img {
+    width: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+}
+
+.barra-lateral .usuario .info-usuario {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-texto);
+    overflow: hidden;
+}
+
+.barra-lateral .usuario .nombre-email {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.barra-lateral .usuario .nombre {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.barra-lateral .usuario .email {
+    font-size: 13px;
+}
+
+.barra-lateral .usuario ion-icon {
+    font-size: 20px;
+}
+/*-------------main*/
+
+#inbox {
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}
+
+/* Estilos para el elemento main */
+main {
+    margin-left: 250px;
+    padding: 20px;
+    height: 100%;
+    transition: margin-left 0.5s ease;
+    background-color: #ffffff;
+    /* Color de fondo predeterminado */
+    color: #000000;
+    /* Color de texto predeterminado */
+}
+
+.contenido-inventario{  
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+    transition: margin-left 0.5s ease; 
+    /* Color de fondo predeterminado */
+    color: #000000;
+    /* Color de texto predeterminado */
+}
+
+
+
+/* Estilos para el modo oscuro del elemento main */
+.dark-mode main {
+    background-color: #333333;
+    /* Color de fondo en modo oscuro */
+    color: #ffffff;
+    /* Color de texto en modo oscuro */
+}
+
+/*------------------> Responsive*/
+@media (max-height: 660px) {
+    .barra-lateral .nombre-pagina {
+        margin-bottom: 5px;
+    }
+
+    .barra-lateral .modo-oscuro {
+        margin-bottom: 3px;
+    }
+}
+
+@media (max-width: 600px) {
+    .barra-lateral {
+        position: fixed;
+        left: -250px;
+    }
+
+    .max-barra-lateral {
+        left: 0;
+    }
+
+    .menu {
+        font-size: 20px;
+        /* Tamaño de fuente para el menú */
+        width: 40px;
+        /* Ancho del menú */
+        height: 40px;
+        /* Altura del menú */
+    }
+
+    .menu ion-icon:nth-child(2) {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    main.min-main {
+        margin-left: 0;
+    }
+}
+
+
+/* Estilos para la lista de productos */
+:root {
+    --color-primary: #007bff;
+    --color-secondary: #f4f4f4;
+    --color-text: #333;
+    --color-hover: #0056b3;
+    --color-border: #ccc;
+}   
+
+
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 20px auto;
+    gap: 20px;
+    padding-left: 35px; 
+}
+
+
+
+.buscador {
+    grid-column: 1 / span 4;
+    grid-row: 2 / span 3;
+    ;
+
+}
+
+.buscador input[type="text"] {
+    width: 70%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    font-size: 1rem;
+}
+
+.buscador button {
+    padding: 0.5rem;
+
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+.registro-productos {
+     
+    padding: 20px;
+    width: 350px;
+    height: 450px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 50px;
+    top: 140px; 
+}
+.registro-productos form {
+
+    grid-column: 4 / span 2;
+    grid-row: 2 / span 2;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px; 
+}
+
+.registro-productos h2 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+
+
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.registro-productos input[type="text"],
+.registro-productos select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+}
+
+.registro-productos input[type="submit"],
+.registro-productos button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+.registro-productos button[type="submit"]:hover {
+    background-color: var(--color-hover);
+}
+
+.lista-productos {
+    grid-column: 1 / 4; 
+    grid-row: 3 / span 1;
+    list-style: none;
+    padding: 0;
+    margin-top: 18px;
+
+}
+
+.lista-productos li {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    padding: 10px; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Centra el contenido verticalmente */
+}
+
+.lista-productos li:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+
+
+
+p {
+    font-size: 0.9rem;
+    /* Tamaño del texto del párrafo */
+    margin-bottom: 20px;
+    /* Espacio inferior entre párrafos */
+}
+
+img {
+    max-width: 100%;
+    /* Asegura que la imagen no supere su contenedor */
+    height: auto;
+    /* Permite que la altura se ajuste automáticamente */
+    display: block;
+    /* Elimina el espacio adicional debajo de la imagen */
+    margin: 0 auto;
+    /* Centra la imagen horizontalmente */
+}
+
+
+/* Agrega estos estilos al final de tu archivo CSS */
+
+/* Estilos para el modo oscuro del elemento main */
+.dark-mode .registro-productos {
+    background-color: #444;
+    /* Cambia el color de fondo en modo oscuro */
+    color: #fff;
+    /* Cambia el color de texto en modo oscuro */
+}
+
+/* Estilos para la lista de productos */
+.lista-productos {
+    overflow-y: auto;
+    /* Agrega desplazamiento vertical */
+    max-height: 400px;
+
+    /* Establece una altura máxima para evitar el desborde */
+}
+
+
+/* Estilos para los botones de editar y borrar */
+.lista-productos .acciones {
+
+    justify-content: space-around;
+    display: flex;
+    gap: 1rem;
+
+
+}
+
+
+.lista-productos .acciones button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.lista-productos .acciones button:hover {
+    background-color: #ddd;
+}
+
+
+.lista-productos .acciones button.editar-btn {
+    background-color: rgb(249, 222, 186);
+    color: #333;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Agregar sombra al botón editar */
+}
+
+.lista-productos .acciones button.borrar-btn {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Agregar sombra al botón borrar */
+}
+
+/* Estilos generales */
+.contentInv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Usamos repeat para una mejor legibilidad */
+    grid-template-rows: 80px 1fr 1fr 1fr;
+    margin-left: 2rem;
+    width: 90%;
+    height: 100%;
+}
+
+body {
+
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.dark-mode body {
+
+    background-color: #222;
+    /* Fondo más oscuro para las cartas */
+    color: #fff;
+    /* Texto claro para las cartas */
+
+}
+
+
+/* Estilos para el modo oscuro */
+.dark-mode .contentInv {
+    background-color: #333;
+    /* Fondo oscuro */
+    color: #fff;
+    /* Texto claro */
+}
+
+.dark-mode .card {
+    background-color: #222;
+    /* Fondo más oscuro para las cartas */
+    color: #fff;
+    /* Texto claro para las cartas */
+}
+
+
+
+/* Estilos para el diagrama */
+.diagrama {
+    grid-column: 1 / 4;
+    /* Simplificamos con span para cubrir 3 columnas */
+    grid-row: 2 / 3;
+    height: 300px;
+    /* Simplificamos con span para cubrir 1 fila */
+    line-height: 150px;
+    text-align: center;
+}
+
+/* Estilos para las cartas de inventario */
+.cartas {
+    display: flex;
+    margin-top: 10px;
+    height: 270px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    grid-column: 1 / 5;
+    /* Cubre 3 columnas */
+    grid-row: 3 / 4;
+    /* Cubre 2 filas */
+    white-space: nowrap;
+    overflow-x: auto;
+    box-shadow: 0px 0px 12px rgba(26, 26, 32, 0.338);
+    /* Sombra de resaltado azul */
+    border-radius: 5px;
+    overflow-y: hidden;
+}
+
+
+.dark-mode .cartas {
+    background-color: #222;
+    /* Cambia el color de fondo de las cartas en modo oscuro */
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
+    /* Cambia la sombra de las cartas en modo oscuro */
+}
+
+
+
+.card {
+    height: 220px;
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.478);
+    margin-right: 20px;
+}
+
+
+
+
+.dark-mode .card {
+    background-color: #444;
+    /* Cambia el color de fondo de las tarjetas en modo oscuro */
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
+    /* Cambia la sombra de las tarjetas en modo oscuro */
+}
+
+
+.card p {
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+/* Estilos para el contenedor de cartas de inventario */
+.cartas-inventario { 
+    display: flex;
+    grid-column: 4 / -1;
+    /* Cubre 1 columna */
+    grid-row: 1 / 2;
+    /* Cubre 2 filas */
+    height: 350px;
+    flex-direction: column;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+.dark-mode .cartas-inventario {
+    background-color: #444;
+    /* Cambia el color de fondo de las tarjetas en modo oscuro */
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
+    /* Cambia la sombra de las tarjetas en modo oscuro */
+ 
+}
+
+/* Estilos para el formulario */
+.form-row { 
+    display: flex;
+    align-items: center;
+    width: 350px;
+    
+}
+
+.dark-mode .form-row label {
+    background-color: #444;
+    color: #f4f4f4;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.form-row label {
+    width: 80px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-row input { 
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(0, 0, 6);
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.381);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+.dark-mode button[type="submit"] {
+    background-color: #fff;
+    color: #000000;
+}
+
+button[type="submit"]:hover {
+    background-color:#0000007b ;
+}
+
+
+.dark-mode button[type="submit"]:hover{
+    background-color: #0000007c;
+    color: #ccc;
+}
+
+.contentInv h1 {
+    grid-column: 1 / 3;
+    
+    grid-row: 1 / 2;
+    font-size: 1.8rem; 
+
+}
+
+.content h1{
+    grid-column: 1 / 3;
+    
+    grid-row: 1 / 2;
+    font-size: 1.8rem; 
+
+}
+
+
+.example-2 {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    align-items: center;
+  }
+  
+  .trabajar-inventario,
+  .editar-inventario {
+    float: right;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    background-color: rgb(44, 44, 44); 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+  }
+  
+  .trabajar-inventario:hover,
+  .editar-inventario:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+  }
+  
+  .trabajar-inventario:active,
+  .editar-inventario:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
