@@ -9,7 +9,11 @@ const {
     getConnection
 } = require('./database')
 
+<<<<<<< HEAD
 // Para manejar Excel:
+=======
+// Para manejar excel:
+>>>>>>> 46149be (Iniciando proyecto)
 const XlsxPopulate = require('xlsx-populate');
 const Workbook = require('xlsx-populate/lib/Workbook');
 const {
