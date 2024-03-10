@@ -1,5 +1,5 @@
 {
-  "name": "gama-inv",
+  "name": "gestor-inventario",
   "version": "1.0.0",
   "description": "Sistema para gestionar el inventario y agilizar la entrega del mismo",
   "main": "src/index.js",
