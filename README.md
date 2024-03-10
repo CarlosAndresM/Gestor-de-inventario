@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# Gestor-de-inventario
-=======
+# Gestor-de-inventario 
  
 ---
 
@@ -121,3 +119,4 @@ Este README proporciona una visión general del proyecto y las funcionalidades p
 Version 1.0.0
 
 [Carlos Muñoz]
+# Gestor-de-inventario
