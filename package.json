@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "electron .",
+    "build": "electron-builder",
     "package": "electron-packager . GestorInventario --platform=linux --arch=x64 --electron-version=15.2.0 --overwrite",
     "package:windows": "electron-packager . GestorInventario --platform=win32 --arch=ia32,x64 --electron-version=15.2.0 --overwrite"
-
   },
   "keywords": [],
   "author": {
@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^15.2.0",
+    "electron-builder": "^24.13.3",
     "electron-packager": "^17.1.2",
     "electron-reload": "^2.0.0-alpha.1",
     "promise-mysql": "^5.2.0",

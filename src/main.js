@@ -35,9 +35,7 @@ function createWindow() {
 
   // Desactivar los menús de la aplicación
   Menu.setApplicationMenu(null);
-
-    window.webContents.openDevTools()
-
+ 
 
     // Funciones necesarios para las operaciones crud
 
